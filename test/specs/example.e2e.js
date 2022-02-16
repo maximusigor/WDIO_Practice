@@ -12,5 +12,3 @@ describe('My Login application', () => {
         await browser.pause(10000);
     });
 });
-
-
