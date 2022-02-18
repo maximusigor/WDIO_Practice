@@ -18,7 +18,7 @@ class LoginPage extends Page {
     }
 
     get btnSubmit() {
-        return $('a[href="/login"]');
+        return $('a[href="login"]');
     }
 
     /**
