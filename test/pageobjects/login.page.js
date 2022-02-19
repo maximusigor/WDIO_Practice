@@ -23,6 +23,15 @@ class LoginPage extends Page {
     get loginFormSignInButton() {
         return $("//input[@type='submit']");
     }
+
+    get clickMenuButton(){
+        return $(".Header-link[aria-label='View profile and more']");
+    }
+
+    get selectItemMenu(){
+        return $(".dropdown-item[href='/maximusigor']");
+    }
+
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
@@ -38,6 +47,14 @@ class LoginPage extends Page {
     async login (username, password) {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
+    }
+
+    async clickMenu() {
+        await this.clickMenuButton.click();
+    }
+
+    async clickItemMenuButton() {
+        await this.selectItemMenu.click();
     }
 
 
