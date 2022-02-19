@@ -1,7 +1,6 @@
 
 
 const Page = require('./page');
-
 /**
  * sub page containing specific selectors and methods for a specific page
  */
@@ -10,25 +9,35 @@ class LoginPage extends Page {
      * define selectors using getter methods
      */
     get inputUsername() {
-        return $('#username');
+        return $('#login_field');
     }
 
     get inputPassword() {
         return $('#password');
     }
 
-    get btnSubmit() {
-        return $('a[href="login"]');
+    get signInButton() {
+        return $("//a[@href='/login']");
     }
 
+    get loginFormSignInButton() {
+        return $("//input[@type='submit']");
+    }
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
+    async clickSingInButton() {
+        await this.signInButton.click();
+    }
+
+    async clickLoginFormSingInButton() {
+        await this.loginFormSignInButton.click();
+    }
+
     async login (username, password) {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
     }
 
 
@@ -36,7 +45,7 @@ class LoginPage extends Page {
      * overwrite specific options to adapt it to page object
      */
     open() {
-        return super.open('login');
+        return super.open();
     }
 }
 
