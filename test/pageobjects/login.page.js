@@ -24,11 +24,11 @@ class LoginPage extends Page {
         return $("//input[@type='submit']");
     }
 
-    get clickMenuButton(){
+    get menuButton(){
         return $(".Header-link[aria-label='View profile and more']");
     }
 
-    get selectItemMenu(){
+    get itemMenu(){
         return $(".dropdown-item[href='/maximusigor']");
     }
 
@@ -50,11 +50,11 @@ class LoginPage extends Page {
     }
 
     async clickMenu() {
-        await this.clickMenuButton.click();
+        await this.menuButton.click();
     }
 
     async clickItemMenuButton() {
-        await this.selectItemMenu.click();
+        await this.itemMenu.click();
     }
 
 
