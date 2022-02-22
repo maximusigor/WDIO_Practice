@@ -8,11 +8,6 @@ class ProfilePage extends Page {
  
  
  
- 
- 
- 
- 
- 
     /**
      * overwrite specific options to adapt it to page object
      */
