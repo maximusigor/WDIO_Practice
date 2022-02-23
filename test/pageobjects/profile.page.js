@@ -1,6 +1,5 @@
 
 
-
 const Page = require('./page');
 
 class ProfilePage extends Page {
